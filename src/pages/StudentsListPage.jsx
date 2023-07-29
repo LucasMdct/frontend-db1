@@ -21,7 +21,7 @@ function StudentsListPage() {
     try {
       setLoading(true);
 
-      const response = await axios.get(`https://gym.medeirosdev.cloud/students`);
+      const response = await axios.get(`http://localhost:3000/students`);
 
       const { data } = response;
 
@@ -44,7 +44,7 @@ function StudentsListPage() {
     try {
       setLoading(true);
 
-      await axios.delete(`https://gym.medeirosdev.cloud/students/${student.id}`);
+      await axios.delete(`http://localhost:3000/students/${student.id}`);
 
       const newStudents = [...students];
       const index = newStudents.findIndex((student) => student.id === student.id);

@@ -27,7 +27,7 @@ function StudentsCreatePage() {
     try {
       setLoading(true);
 
-      const response = await axios.get(`https://gym.medeirosdev.cloud/students/`);
+      const response = await axios.get(`http://localhost:3000/students/`);
 
       const { data } = response;
 
@@ -89,9 +89,9 @@ function StudentsCreatePage() {
       };
 
       if (studentId) {
-        await axios.patch(`https://gym.medeirosdev.cloud/students/${studentId}`, body);
+        await axios.patch(`http://localhost:3000/students/${studentId}`, body);
       } else {
-        await axios.post('https://gym.medeirosdev.cloud/students', body);
+        await axios.post('http://localhost:3000/students', body);
       }
 
       notification.success({

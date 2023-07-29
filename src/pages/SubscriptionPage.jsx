@@ -34,7 +34,7 @@ import {
           password: password.value,
         };
   
-        await axios.post('https://gym.medeirosdev.cloud/teachers', body);
+        await axios.post('http://localhost:3000/teachers', body);
   
         Modal.success({
           title: 'Cadastro realizado com sucesso!',
