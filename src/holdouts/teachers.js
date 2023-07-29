@@ -4,29 +4,27 @@
 const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
 
 export const validateEmail = (text) => {
-  const valido = EMAIL_REGEX.test(text);
-  if (!valido) {
+  const valid = EMAIL_REGEX.test(text);
+  if (!valid) {
     return 'E-mail inválido';
   }
   return undefined;
 };
 
+const PASSWORD_REGEX = /^.{8,16}$/;
+
 export const validatePassword = (text) => {
-  if (!text || !text.length) {
+  const valid = PASSWORD_REGEX.test(text);
+  if (!valid) {
     return 'Senha é obrigatória';
-  }
-  if (text.length < 8 || text.length > 16) {
-    return 'Senha deve ter entre 8 e 16 caracteres';
   }
   return undefined;
 };
-
+const NAME_REGEX = /^.{3,200}$/;
 export const validateName = (text) => {
-  if (!text || !text.length) {
+  const valid = NAME_REGEX.test(text);
+  if (!valid) {
     return 'O nome é obrigatório';
-  }
-  if (text.length < 3 || text.length > 200) {
-    return 'O nome deve ter entre 3 e 200 caracteres';
   }
   return undefined;
 };

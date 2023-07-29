@@ -28,7 +28,7 @@ import {Button, Card,Col, Form, Layout, Row,Typography, Modal,} from 'antd';
           password: password.value,
         };
   
-        const response = await axios.post('http://localhost:3000/teachers/login', body);
+        const response = await axios.post('/teachers/login', body);
   
         const { tkn } = response.data;
         LocalStorageH.setToken(tkn);

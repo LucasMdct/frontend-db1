@@ -27,7 +27,7 @@ function StudentsCreatePage() {
     try {
       setLoading(true);
 
-      const response = await axios.get(`http://localhost:3000/students/`);
+      const response = await axios.get(`/students/`);
 
       const { data } = response;
 
@@ -89,9 +89,9 @@ function StudentsCreatePage() {
       };
 
       if (studentId) {
-        await axios.patch(`http://localhost:3000/students/${studentId}`, body);
+        await axios.patch(`/students/${studentId}`, body);
       } else {
-        await axios.post('http://localhost:3000/students', body);
+        await axios.post('/students', body);
       }
 
       notification.success({

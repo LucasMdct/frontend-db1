@@ -34,7 +34,7 @@ import {
           password: password.value,
         };
   
-        await axios.post('http://localhost:3000/teachers', body);
+        await axios.post('/teachers', body);
   
         Modal.success({
           title: 'Cadastro realizado com sucesso!',
