@@ -1,3 +1,4 @@
+
 FROM node:18-alpine
 
 WORKDIR /home/node/frontend-db1
@@ -13,4 +14,4 @@ RUN npm install \
     && npm cache clean --force  
 
 COPY . .
-CMD [ "npm", "run", "dev", "--", "--host", "168.75.79.92" ]
+CMD [ "npm", "run", "dev", "--", "--host", "0.0.0.0" ]
